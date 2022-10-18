@@ -56,11 +56,11 @@ app.post('/todos', checksExistsUserAccount, (request, response) => {
   const { title, deadline } = request.body
 
   const todo = {
-    id:uuidV4,
+    id:uuidV4(),
     title,
     done: false,
     deadline: new Date(deadline),
-    create_at:new Date()
+    created_at:new Date()
   }
 
   user.todos.push(todo)
